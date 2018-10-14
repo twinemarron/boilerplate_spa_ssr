@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build:client": "NODE_ENV=development webpack --progress --colors --watch --mode development --config ./webpack.client.config.js",
+    "build:server": "NODE_ENV=development webpack --progress --colors --watch --mode development --config ./webpack.server.config.js",
+    "dev": "nodemon ./dist/server.bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,6 +18,8 @@
   "devDependencies": {
     "@types/express": "^4.16.0",
     "ts-loader": "^5.2.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
     "webpack-node-externals": "^1.7.2"
   }
 }
