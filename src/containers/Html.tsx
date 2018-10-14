@@ -1,6 +1,10 @@
 import * as React from 'react'
-import * as App from './App'
+import App from './App'
 
+// interface HtmlInterface {
+//     children?: React.ReactChild;
+// }
+// const Html: React.SFC<HtmlInterface>= () => {
 const Html = () => {
   return (
     <html>

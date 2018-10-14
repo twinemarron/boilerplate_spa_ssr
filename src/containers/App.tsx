@@ -1,6 +1,10 @@
 import * as React from 'react'
 
-const App = () => {
+interface AppProps {
+  name?: string;
+}
+const App: React.SFC<AppProps> = ({name}) => {
+// const App = ({name}) => {
   return (
     <div>
       App
