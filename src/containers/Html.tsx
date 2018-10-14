@@ -1,11 +1,8 @@
 import * as React from 'react'
 import App from './App'
 
-// interface HtmlInterface {
-//     children?: React.ReactChild;
-// }
-// const Html: React.SFC<HtmlInterface>= () => {
-const Html = () => {
+interface Props {}
+const Html: React.SFC<Props> = () => {
   return (
     <html>
       <head>
