@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "jsx": "react",
+    "strict": true,
+    "types": ["webpack-env"]
+  }
+}
