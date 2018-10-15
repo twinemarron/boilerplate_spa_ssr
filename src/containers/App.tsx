@@ -7,7 +7,7 @@ interface Props {
 const App: React.SFC<Props> = () => {
   return (
     <div>
-      App
+      from App
     </div>
   )
 }

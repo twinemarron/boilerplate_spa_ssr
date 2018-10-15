@@ -8,7 +8,6 @@ import Html from '../containers/Html'
 const router = express.Router()
 
 router.get('*', (req: Request, res: Response) => {
-  console.log('req.url: ', req.url)
   const context: { url?: string } = {}
   ReactDOMServer.renderToNodeStream(
     <StaticRouter location={req.url} context={context} >
