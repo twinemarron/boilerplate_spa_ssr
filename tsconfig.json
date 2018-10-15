@@ -9,5 +9,8 @@
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "types": ["webpack-env"]
-  }
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }

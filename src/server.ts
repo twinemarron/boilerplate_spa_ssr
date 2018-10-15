@@ -1,4 +1,6 @@
 import * as express from 'express'
+import { Request, Response } from "express";
+// console.log(Request);
 import serverRoutes from './routes/serverRoutes'
 
 const app = express()

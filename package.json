@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^10.11.7",
     "@types/webpack-env": "^1.13.6",
     "express": "^4.16.4",
     "react": "^16.5.2",
