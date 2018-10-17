@@ -103,7 +103,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // import { BrowserRouter } from 'react-router-dom'
-console.log('Hello from client.tsx');
 
 react_dom__WEBPACK_IMPORTED_MODULE_1__["hydrate"](react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_containers_App__WEBPACK_IMPORTED_MODULE_2__["default"], null), document.getElementById('app'));
 
