@@ -1,13 +1,15 @@
 const baseConfig = require('./webpack.config.js')
+const nodeExternals = require('webpack-node-externals')
 
 const serverConfig = {
+  target: 'node',
   entry: {
     'dist/server': './src/server.ts',
   },
   module: {
     rules: [
       {
-        test: /\.[jt]sx?$/,
+        test: /\.tsx?$/,
         use: [
           {
             loader: 'ts-loader',
@@ -19,6 +21,7 @@ const serverConfig = {
       },
     ],
   },
+  externals: [nodeExternals()],
 }
 
 const mergedConfig = { ...baseConfig, ...serverConfig }

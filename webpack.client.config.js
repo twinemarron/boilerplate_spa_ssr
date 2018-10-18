@@ -1,13 +1,13 @@
 const baseConfig = require('./webpack.config.js')
 
-const serverConfig = {
+const clientConfig = {
   entry: {
     'public/js/client': './src/client.tsx',
   },
   module: {
     rules: [
       {
-        test: /\.[jt]sx?$/,
+        test: /\.tsx?$/,
         use: [
           {
             loader: 'ts-loader',
@@ -21,7 +21,7 @@ const serverConfig = {
   },
 }
 
-const mergedConfig = { ...baseConfig, ...serverConfig }
+const mergedConfig = { ...baseConfig, ...clientConfig }
 
 module.exports = mergedConfig
 
