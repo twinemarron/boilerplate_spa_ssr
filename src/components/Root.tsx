@@ -2,13 +2,13 @@ import * as React from 'react'
 
 interface Props {
 }
-const Topics: React.SFC<Props> = () => {
+const Root: React.SFC<Props> = () => {
   return (
     <div>
-      Topics
+      Root
     </div>
   )
 }
 
-export default Topics
+export default Root
 
