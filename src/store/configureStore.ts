@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from 'redux'
-import reducer from './reducer'
+import reducer from '../reducers'
 
 const configureStore = () => {
   const middlewares: Array<any> = []
