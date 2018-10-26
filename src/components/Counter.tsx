@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-interface Props {
-}
+interface Props {}
+
 const Counter: React.SFC<Props> = () => {
   return (
     <div>

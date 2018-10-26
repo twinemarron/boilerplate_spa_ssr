@@ -12,12 +12,10 @@ const initialState: CounterState = {
 export const counterReducer = (state: CounterState = initialState, action: CounterActions) => {
   switch(action.type) {
     case ActionType.INCREMENT_COUNTER:
-      console.log('state: ', state)
       const newState = {
         ...state,
         ...action.payload,
       }
-      console.log('newState: ', newState)
       return newState
     default:
       return state
