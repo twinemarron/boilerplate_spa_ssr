@@ -9,7 +9,6 @@ import NotFound from './NotFound';
 interface Props {
 }
 const App: React.SFC<Props> = (props) => {
-  console.log('App props: ', props);
   return (
     <div>
       from App

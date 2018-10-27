@@ -3,7 +3,7 @@ import serverRoutes from './routes/serverRoutes'
 
 const app = express()
 
-const PORT: number = 3020
+const PORT: number = 3030
 
 app.use(express.static('public'))
 app.use('/', serverRoutes)
