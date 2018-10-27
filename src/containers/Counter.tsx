@@ -2,7 +2,10 @@ import { Dispatch } from 'redux'
 import { connect, MapDispatchToPropsParam, MapStateToPropsParam } from 'react-redux'
 
 import Counter from '../components/Counter'
-import { incrementCounterAction } from '../actions/counterActions'
+import {
+  incrementCounterAction,
+  decrementCounterAction
+} from '../actions/counterActions'
 
 const mapStateToProps = (state: any) => {
   return {
@@ -12,8 +15,12 @@ const mapStateToProps = (state: any) => {
 const mapDispatchToProps = (dispatch: any) => {
   return {
     incrementCounter: (count: any) => {
-      console.log('count!!: ', count);
+      console.log('increment count!!: ', count);
       dispatch(incrementCounterAction(count))
+    },
+    decrementCounter: (count: any) => {
+      console.log('decrement count!!: ', count);
+      dispatch(decrementCounterAction(count))
     }
   }
 }

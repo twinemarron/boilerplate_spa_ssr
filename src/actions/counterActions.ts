@@ -7,7 +7,6 @@ interface IncrementCounterAction extends Action {
     count: number
   }
 }
-
 export const incrementCounterAction = (count: number): IncrementCounterAction => {
   return {
     type: ActionType.INCREMENT_COUNTER,
@@ -16,4 +15,20 @@ export const incrementCounterAction = (count: number): IncrementCounterAction =>
     },
   }
 }
-export type CounterActions = IncrementCounterAction
+
+interface DecrementCounterAction extends Action {
+  type: ActionType.DECREMENT_COUNTER
+  payload: {
+    count: number
+  }
+}
+
+export const decrementCounterAction = (count: number): DecrementCounterAction => {
+  return {
+    type: ActionType.DECREMENT_COUNTER,
+    payload: {
+      count: count - 1,
+    },
+  }
+}
+export type CounterActions = IncrementCounterAction | DecrementCounterAction

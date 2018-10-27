@@ -12,12 +12,15 @@ const initialState: CounterState = {
 export const counterReducer = (state: CounterState = initialState, action: CounterActions) => {
   switch(action.type) {
     case ActionType.INCREMENT_COUNTER:
-      const newState = {
+      return {
         ...state,
         ...action.payload,
       }
-      console.log('counterReducer newState: ', newState)
-      return newState
+    case ActionType.DECREMENT_COUNTER:
+      return {
+        ...state,
+        ...action.payload,
+      }
     default:
       return state
   }
