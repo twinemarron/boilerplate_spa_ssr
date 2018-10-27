@@ -2,7 +2,7 @@ const baseConfig = require('./webpack.config.js')
 
 const clientConfig = {
   entry: {
-    'public/js/client': './src/client.tsx',
+    'dist/client': './src/client.tsx',
   },
   module: {
     rules: [

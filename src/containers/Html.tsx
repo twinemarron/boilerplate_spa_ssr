@@ -12,7 +12,7 @@ const Html: React.SFC<Props> = (props) => {
         <div id="app">
           <App /> 
         </div>
-        <script src="/js/client.bundle.js" />
+        <script src="/client.bundle.js" />
       </body>
     </html>
   )
