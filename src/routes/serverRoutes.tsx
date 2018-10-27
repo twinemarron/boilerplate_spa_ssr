@@ -15,7 +15,7 @@ router.get('/client.bundle.js*', (req: Request, res: Response): void => {
   res.sendFile(path.resolve(`./dist${req.url}`))
 })
 
-router.get('*', (req: Request, res: Response) => {
+router.get('*', (req: Request, res: Response): void => {
   res.write('<!DOCTYPE html>')
   const context: { url?: string } = {}
   ReactDOMServer.renderToNodeStream(
