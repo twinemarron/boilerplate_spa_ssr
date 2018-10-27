@@ -15,11 +15,9 @@ const mapStateToProps = (state: any) => {
 const mapDispatchToProps = (dispatch: any) => {
   return {
     incrementCounter: (count: any) => {
-      console.log('increment count!!: ', count);
       dispatch(incrementCounterAction(count))
     },
     decrementCounter: (count: any) => {
-      console.log('decrement count!!: ', count);
       dispatch(decrementCounterAction(count))
     }
   }

@@ -1,8 +1,8 @@
 import * as React from 'react'
-import App from './App'
+import App from '../containers/App'
 
 interface Props {}
-const Html: React.SFC<Props> = (props) => {
+const Html: React.SFC<Props> = (props: Props) => {
   return (
     <html>
       <head>
@@ -12,7 +12,7 @@ const Html: React.SFC<Props> = (props) => {
         <div id="app">
           <App /> 
         </div>
-        <script src="/js/client.bundle.js" />
+        <script src="/client.bundle.js" />
       </body>
     </html>
   )

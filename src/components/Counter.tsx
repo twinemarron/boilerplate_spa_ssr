@@ -7,7 +7,6 @@ interface Props {
 }
 
 const Counter: React.SFC<Props> = (props: Props) => {
-  console.log('Counter props: ', props)
   return (
     <div>
       <h1>Counter</h1>
