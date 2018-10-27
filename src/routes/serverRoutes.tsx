@@ -9,7 +9,7 @@ import configureStore from '../store/configureStore'
 import Html from '../components/Html'
 
 const store = configureStore()
-const router = express.Router()
+const router: express.Router = express.Router()
 
 router.get('/client.bundle.js*', (req: Request, res: Response): void => {
   res.sendFile(path.resolve(`./dist${req.url}`))
