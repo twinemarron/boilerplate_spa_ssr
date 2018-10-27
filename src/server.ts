@@ -9,7 +9,7 @@ app.use(express.static('public'))
 app.use('/', serverRoutes)
 
 app.listen(PORT, (): void => {
-  global.console.log(`app listening @ ${PORT}`)
+  global.console.log(`app listening port ${PORT}`)
   return
 })
 
