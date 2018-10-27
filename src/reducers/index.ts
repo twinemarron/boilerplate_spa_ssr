@@ -25,7 +25,7 @@ import { counterReducer } from './counterReducer'
 
 const reducer = combineReducers({
   // myReducer,
-  counterReducer: counterReducer,
+  counter: counterReducer,
 })
 
 export default reducer

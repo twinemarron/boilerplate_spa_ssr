@@ -1,12 +1,17 @@
 import * as React from 'react'
 
-interface Props {}
+interface Props {
+  count: number
+  incrementCounter(count: any): void 
+}
 
-const Counter: React.SFC<Props> = () => {
+const Counter: React.SFC<Props> = (props: Props) => {
+  console.log('Counter props: ', props)
   return (
     <div>
       <h1>Counter</h1>
-      <button>+</button>
+      <div>{props.count}</div> 
+      <button onClick={() => {props.incrementCounter(props.count)}}>+</button>
     </div>
   )
 }

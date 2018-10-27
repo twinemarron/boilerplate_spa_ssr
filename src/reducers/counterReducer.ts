@@ -16,6 +16,7 @@ export const counterReducer = (state: CounterState = initialState, action: Count
         ...state,
         ...action.payload,
       }
+      console.log('counterReducer newState: ', newState)
       return newState
     default:
       return state

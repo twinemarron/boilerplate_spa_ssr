@@ -3,12 +3,13 @@ import { Route } from "react-router-dom";
 import { Switch } from "react-router";
 import About from './About'
 import Root from './Root'
-import Counter from './Counter'
+import Counter from '../containers/Counter'
 import NotFound from './NotFound';
 
 interface Props {
 }
-const App: React.SFC<Props> = () => {
+const App: React.SFC<Props> = (props) => {
+  console.log('App props: ', props);
   return (
     <div>
       from App

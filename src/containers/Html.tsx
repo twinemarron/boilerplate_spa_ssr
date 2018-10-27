@@ -2,7 +2,7 @@ import * as React from 'react'
 import App from './App'
 
 interface Props {}
-const Html: React.SFC<Props> = () => {
+const Html: React.SFC<Props> = (props) => {
   return (
     <html>
       <head>
