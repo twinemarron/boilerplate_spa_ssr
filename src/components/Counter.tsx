@@ -18,4 +18,3 @@ const Counter: React.SFC<Props> = (props: Props) => {
 }
 
 export default Counter
-
