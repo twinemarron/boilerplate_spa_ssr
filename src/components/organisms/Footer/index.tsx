@@ -7,18 +7,10 @@ const Wrapper = styled.div`
   padding: 1rem;
 `
 
-const InnerWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
-`
-
 const Footer: React.SFC<any> = (props) => {
   return (
     <Wrapper {...props}>
-      <InnerWrapper>
-        <div>Footer</div>
-      </InnerWrapper>
+      <div>Footer</div>
     </Wrapper>
   )
 }

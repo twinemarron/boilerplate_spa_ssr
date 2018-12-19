@@ -8,29 +8,29 @@ const Wrapper = styled.div`
   box-sizing: border-box;
 `
 
-const Header = styled.header`
+// const Header = styled.header`
+const Header = styled.div`
   background: #afa;
 `
 
 // const Content = styled.section`
-//   background: #faa;
-// `
+const Content = styled.div`
+  background: #faa;
+`
 
 // const Footer = styled.footer`
-//   background: #aaf;
-// `
+const Footer = styled.div`
+  background: #aaf;
+`
 
 const PageTemplate: React.SFC<any> = ({
-  // header, children, footer, ...props
-  header, ...props
+  header, children, footer, ...props
 }) => {
   return (
     <Wrapper {...props}>
-      <Header {...props}>{header}</Header>
-      {
-        // <Content>{children}</Content>
-        // <Footer>{footer}</Footer>
-      }
+      <Header>{header}</Header>
+      <Content>{children}</Content>
+      <Footer>{footer}</Footer>
     </Wrapper>
   )
 }

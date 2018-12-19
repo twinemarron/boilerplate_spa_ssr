@@ -9,7 +9,6 @@ const HomePage: React.SFC<any> = (props) => {
       header={<Header />}
       footer={<div>Footer</div>}
     >
-      aaa
       {
         // <div>children</div>
       }

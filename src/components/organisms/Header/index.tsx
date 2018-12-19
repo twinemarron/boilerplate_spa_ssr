@@ -25,17 +25,17 @@ const RightBox = styled.div`
 `
 
 const Header: React.SFC<any> = (props) => {
-  return <div>Header</div>
-  // return (
-  //   <Wrapper {...props}>
-  //     <InnerWrapper>
-  //       <Title>HeaderTitle</Title>
-  //       <RightBox>
-  //         <SignUpButton />
-  //       </RightBox>
-  //     </InnerWrapper>
-  //   </Wrapper>
-  // )
+  // return <div>Header</div>
+  return (
+    <Wrapper {...props}>
+      <InnerWrapper>
+        <Title>HeaderTitle</Title>
+        <RightBox>
+          <SignUpButton />
+        </RightBox>
+      </InnerWrapper>
+    </Wrapper>
+  )
 }
 
 export default Header
