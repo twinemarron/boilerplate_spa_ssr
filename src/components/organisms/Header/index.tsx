@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import styled from 'styled-components'
 import SignUpButton from '../../atoms/SignUpButton'
 
@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   height: 65px;
 `
 
+console.log('Wrapper : ', Wrapper);
 const InnerWrapper = styled.div`
   display: flex;
   align-items: center;
