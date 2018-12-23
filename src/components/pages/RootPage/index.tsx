@@ -6,10 +6,8 @@ import Footer from '../../organisms/Footer'
 const RootPage: React.SFC<any> = (props) => {
   return (
     <PageTemplate
-      // header={<Header />}
-      // footer={<Footer />}
-      header={<header>header</header>}
-      footer={<footer>footer</footer>}
+      header={<Header />}
+      footer={<Footer />}
     >
       <section>Children</section>
     </PageTemplate>

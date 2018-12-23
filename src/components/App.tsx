@@ -15,6 +15,7 @@ const App: React.SFC<Props> = (props) => {
     <div>
       <Switch>
         <Route exact path="/" component={RootPage} />
+        <Route exact path="/home" component={HomePage} />
         <Route path="/about" component={About} />
         <Route component={NotFound} />
       </Switch>
