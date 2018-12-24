@@ -8,18 +8,15 @@ const Wrapper = styled.div`
   box-sizing: border-box;
 `
 
-// const Header = styled.header`
-const Header = styled.div`
+const Header = styled.header`
   background: #afa;
 `
 
-// const Content = styled.section`
-const Content = styled.div`
+const Content = styled.section`
   background: #faa;
 `
 
-// const Footer = styled.footer`
-const Footer = styled.div`
+const Footer = styled.footer`
   background: #aaf;
 `
 

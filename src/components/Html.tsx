@@ -9,9 +9,6 @@ const Html: React.SFC<Props> = (props: Props) => {
         <meta charSet="UTF-8" />
         <title>App</title>
         <link rel="stylesheet" type="text/css" href="css/reset.css" />
-        {
-          // <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css" />
-        }
       </head>
       <body>
         <div id="app">

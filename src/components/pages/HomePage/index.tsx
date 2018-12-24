@@ -9,7 +9,7 @@ const HomePage: React.SFC<any> = (props) => {
       header={<Header />}
       footer={<Footer />}
     >
-      <div>iHomePageですね</div>
+      <div>HomePageですね</div>
     </PageTemplate>
   )
 }
