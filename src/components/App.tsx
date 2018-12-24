@@ -6,7 +6,8 @@ import { Switch } from "react-router";
 import RootPage from './pages/RootPage'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
-import Counter from '../containers/Counter'
+// import Counter from '../containers/Counter'
+import Counter from '../components/Counter'
 import NotFound from './NotFound';
 
 interface Props {
@@ -18,6 +19,7 @@ const App: React.SFC<Props> = (props) => {
         <Route exact path="/" component={RootPage} />
         <Route exact path="/home" component={HomePage} />
         <Route path="/about" component={AboutPage} />
+        <Route path="/counter" component={Counter} />
         <Route component={NotFound} />
       </Switch>
     </div>

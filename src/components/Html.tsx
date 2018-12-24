@@ -1,5 +1,5 @@
 import * as React from 'react'
-import App from '../containers/App'
+import App from '../components/App'
 
 interface Props {}
 const Html: React.SFC<Props> = (props: Props) => {
