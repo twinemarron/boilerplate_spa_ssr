@@ -1,5 +1,13 @@
 import * as React from 'react'
 
+import { Dispatch } from 'redux'
+import { connect, MapDispatchToPropsParam, MapStateToPropsParam } from 'react-redux'
+
+import {
+  incrementCounterAction,
+  decrementCounterAction
+} from '../actions/counterActions'
+
 interface Props {
   count: number
   incrementCounter(count: any): void 
@@ -17,5 +25,27 @@ const Counter: React.SFC<Props> = (props: Props) => {
   )
 }
 
-export default Counter
+// export default Counter
+// import Counter from '../components/Counter'
+
+const mapStateToProps = (state: any) => {
+  return {
+    count: state.counter.count
+  }
+}
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    incrementCounter: (count: any) => {
+      dispatch(incrementCounterAction(count))
+    },
+    decrementCounter: (count: any) => {
+      dispatch(decrementCounterAction(count))
+    }
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Counter)
 

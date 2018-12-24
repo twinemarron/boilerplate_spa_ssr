@@ -1,12 +1,14 @@
 import * as React from 'react'
-import App from '../containers/App'
+import App from '../components/App'
 
 interface Props {}
 const Html: React.SFC<Props> = (props: Props) => {
   return (
     <html>
       <head>
+        <meta charSet="UTF-8" />
         <title>App</title>
+        <link rel="stylesheet" type="text/css" href="css/reset.css" />
       </head>
       <body>
         <div id="app">

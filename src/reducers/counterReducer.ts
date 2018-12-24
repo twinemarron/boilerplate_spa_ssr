@@ -1,5 +1,5 @@
 import { ActionType } from '../actions/ActionTypes'
-import { CounterActions } from '../actions/CounterActions'
+import { CounterActions } from '../actions/counterActions'
 
 export interface CounterState {
   count: number

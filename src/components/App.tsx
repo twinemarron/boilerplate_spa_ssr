@@ -1,9 +1,13 @@
 import * as React from 'react'
 import { Route } from "react-router-dom";
 import { Switch } from "react-router";
-import About from './About'
-import Root from './Root'
-import Counter from '../containers/Counter'
+// import About from './About'
+// import Root from './Root'
+import RootPage from './pages/RootPage'
+import HomePage from './pages/HomePage'
+import AboutPage from './pages/AboutPage'
+// import Counter from '../containers/Counter'
+import Counter from '../components/Counter'
 import NotFound from './NotFound';
 
 interface Props {
@@ -11,10 +15,10 @@ interface Props {
 const App: React.SFC<Props> = (props) => {
   return (
     <div>
-      from App
       <Switch>
-        <Route exact path="/" component={Root} />
-        <Route path="/about" component={About} />
+        <Route exact path="/" component={RootPage} />
+        <Route exact path="/home" component={HomePage} />
+        <Route path="/about" component={AboutPage} />
         <Route path="/counter" component={Counter} />
         <Route component={NotFound} />
       </Switch>
