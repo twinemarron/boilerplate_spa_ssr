@@ -1,5 +1,9 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import * as theme from 'styled-theming'
+import { colors } from '../../../styles'
+
+const footerHeight = 65
 
 const Wrapper = styled.div`
   display: flex;
@@ -9,16 +13,19 @@ const Wrapper = styled.div`
 `
 
 const Header = styled.header`
-  background: #afa;
 `
 
 const Content = styled.section`
-  background: #faa;
+  display: flex;
+  justify-content: center;
+  flex: 1;
 `
+  // background: #faa;
 
 const Footer = styled.footer`
-  background: #aaf;
+  height: ${footerHeight}px;
 `
+  // background: #aaf;
 
 const PageTemplate: React.SFC<any> = ({
   header, children, footer, ...props
