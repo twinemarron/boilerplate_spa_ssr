@@ -1,5 +1,5 @@
 import { Action } from 'redux'
-import { ActionType } from './ActionTypes'
+import { ActionType } from './ActionType'
 
 interface IncrementCounterAction extends Action {
   type: ActionType.INCREMENT_COUNTER

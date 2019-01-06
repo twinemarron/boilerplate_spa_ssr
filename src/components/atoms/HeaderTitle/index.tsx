@@ -7,8 +7,6 @@ import { Size, Mode } from '../../../enums'
 const textColor = theme('mode', {
   [Mode.light]: colors.text[Mode.light],
   [Mode.dark]: colors.text[Mode.dark],
-  // light: colors.text.light,
-  // dark: colors.text.dark,
 })
 
 const headerTitleSize = theme('size', {

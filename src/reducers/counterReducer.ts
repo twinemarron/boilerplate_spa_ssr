@@ -1,4 +1,4 @@
-import { ActionType } from '../actions/ActionTypes'
+import { ActionType } from '../actions/ActionType'
 import { CounterActions } from '../actions/counterActions'
 
 export interface CounterState {

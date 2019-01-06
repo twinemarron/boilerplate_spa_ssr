@@ -33,6 +33,7 @@ import configureStore from './store/configureStore'
 // const store = createStore(myReducer)
 
 const store = configureStore()
+// console.log(store)
 
 ReactDOM.hydrate(
   <Provider store={store}>

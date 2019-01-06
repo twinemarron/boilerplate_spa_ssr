@@ -1,9 +1,10 @@
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import reducer from '../reducers'
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 const configureStore = (): any => {
   const middlewares: Array<any> = []
-  const store = createStore(reducer, applyMiddleware(...middlewares))
+  const store = createStore(reducer, composeWithDevTools(applyMiddleware(...middlewares)))
   return store
 }
 

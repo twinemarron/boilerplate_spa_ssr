@@ -2,6 +2,7 @@ import * as React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 import * as theme from 'styled-theming'
 import App from '../components/App'
+import { Size, Mode } from '../enums'
 
 interface Props {}
 
@@ -20,7 +21,7 @@ const Html: React.SFC<Props> = (props: Props) => {
       </head>
       <body>
         <div id="app">
-          <App /> 
+          <App />
         </div>
         <script src="/client.bundle.js" />
       </body>

@@ -16,6 +16,7 @@ import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import * as theme from 'styled-theming'
 import { colors } from '../styles'
 import { Size, Mode } from '../enums'
+import { connect, MapDispatchToPropsParam, MapStateToPropsParam } from 'react-redux'
 
 const textColor = theme('mode', {
   [Mode.light]: colors.text[Mode.light],
@@ -25,8 +26,6 @@ const textColor = theme('mode', {
 const backgroundColor = theme('mode', {
   [Mode.light]: colors.white,
   [Mode.dark]: colors.grayDark,
-  // light: colors.white,
-  // dark: colors.grayDark,
 })
 
 const GlobalStyle = createGlobalStyle`
@@ -36,14 +35,24 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+// interface Props {}
 interface Props {
+  themeInfo?: {
+    mode: Mode
+    size: Size
+  }
 }
+
+// class App extends React.PureComponent<Props, {}> {
 const App: React.SFC<Props> = (props) => {
+  console.log('App props: ', props)
+  console.log('(props.themeInfo && props.themeInfo.size) || Size.normal: ', (props.themeInfo && props.themeInfo.size) || Size.normal)
   return (
     <ThemeProvider theme={{
-      mode: 'light',
-      // mode: Mode.light,
-      size: Size.large,
+      mode: (props.themeInfo && props.themeInfo.mode) || Mode.light,
+      size: (props.themeInfo && props.themeInfo.size) || Size.normal,
+      // size: Size.large,
+      // size: Size.compact,
     }}>
       <React.Fragment>
         <GlobalStyle />
@@ -59,7 +68,6 @@ const App: React.SFC<Props> = (props) => {
                 <Route component={() => <div>default</div>} />
               </Switch>
             </Auth>
-
             <Route component={NotFound} />
           </Switch>
         </div>
@@ -68,4 +76,12 @@ const App: React.SFC<Props> = (props) => {
   )
 }
 
-export default App
+// export default App
+const mapStateToProps = (state: any) => {
+  return state
+}
+export default connect(
+  mapStateToProps
+)(App)
+
+
