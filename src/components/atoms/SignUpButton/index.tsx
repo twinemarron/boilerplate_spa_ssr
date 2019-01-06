@@ -2,11 +2,18 @@ import * as React from 'react'
 import styled from 'styled-components'
 import * as theme from 'styled-theming'
 import { colors } from '../../../styles'
-import { Mode } from '../../../enums'
+import { Size, Mode } from '../../../enums'
+import { textSizes } from '../../../styles'
 
 const textColor = theme('mode', {
   [Mode.light]: colors.text[Mode.light],
   [Mode.dark]: colors.text[Mode.dark],
+})
+
+const fontSize = theme('size', {
+  [Size.large]: textSizes.t5[Size.large],
+  [Size.normal]: textSizes.t5[Size.normal],
+  [Size.compact]: textSizes.t5[Size.compact],
 })
 
 const Wrapper = styled.div`
@@ -25,6 +32,7 @@ const Text = styled.span`
   cursor: pointer;
   padding: 4px 12px;
   color: ${textColor};
+  font-size: ${fontSize};
 `
 
 const SignUpButton: React.SFC<any> = (props) => {

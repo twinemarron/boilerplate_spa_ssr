@@ -1,7 +1,8 @@
 import * as React from 'react'
 import PageTemplate from '../../templates/PageTemplate'
 import Header from '../../organisms/Header'
-import { WidthWrapper } from '../../atoms/Wrappers'
+// import { WidthWrapper } from '../../atoms/Wrappers'
+import { WidthWrapper, Section } from '../../atoms/Wrappers'
 import Footer from '../../organisms/Footer'
 
 interface Props {}
@@ -13,7 +14,9 @@ const SignInPage: React.SFC<any> = (props: Props) => {
       footer={<Footer />}
     >
       <WidthWrapper>
-        <div>SignInPageですね</div>
+        <Section>
+          <div>SignInPageですね</div>
+        </Section>
       </WidthWrapper>
     </PageTemplate>
   )

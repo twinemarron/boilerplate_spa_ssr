@@ -10,17 +10,17 @@ const textColor = theme('mode', {
 })
 
 const headerTitleSize = theme('size', {
-  [Size.large]: textSizes.headerTitle[Size.large],
-  [Size.normal]: textSizes.headerTitle[Size.normal],
-  [Size.compact]: textSizes.headerTitle[Size.compact],
+  [Size.large]: textSizes.t1[Size.large],
+  [Size.normal]: textSizes.t1[Size.normal],
+  [Size.compact]: textSizes.t1[Size.compact],
 })
 
 const Title = styled.h1`
   font-weight: bold;
-  color: ${textColor};
+  color: #19ab8b;
   font-size: ${headerTitleSize};
 `
-
+  // color: ${textColor};
 interface Props {
   text: String
 }

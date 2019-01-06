@@ -20,12 +20,10 @@ const Content = styled.section`
   justify-content: center;
   flex: 1;
 `
-  // background: #faa;
 
 const Footer = styled.footer`
   height: ${footerHeight}px;
 `
-  // background: #aaf;
 
 const PageTemplate: React.SFC<any> = ({
   header, children, footer, ...props

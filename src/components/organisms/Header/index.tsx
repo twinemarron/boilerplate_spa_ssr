@@ -28,7 +28,7 @@ const textColor = theme('mode', {
 })
 const backgroundColor = theme('mode', {
   [Mode.light]: colors.white,
-  [Mode.dark]: colors.grayDark,
+  [Mode.dark]: colors.grayDarker,
 })
 
 const Wrapper = styled.div`

@@ -1,5 +1,14 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import * as theme from 'styled-theming'
+import { Size, Mode } from '../../../enums'
+import { textSizes } from '../../../styles'
+
+const fontSize = theme('size', {
+  [Size.large]: textSizes.t3[Size.large],
+  [Size.normal]: textSizes.t3[Size.normal],
+  [Size.compact]: textSizes.t3[Size.compact],
+})
 
 const Wrapper = styled.div`
   padding: 0 4px;
@@ -14,6 +23,7 @@ const Text = styled.span`
   display: block;
   cursor: pointer;
   padding: 4px 12px;
+  font-size: ${fontSize};
 `
 
 const SignOutButton: React.SFC<any> = (props) => {

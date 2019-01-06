@@ -7,7 +7,6 @@ import RootPage from './pages/RootPage'
 import SignInPage from './pages/SignInPage'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
-// import Counter from '../containers/Counter'
 import Counter from '../components/Counter'
 import NotFound from './NotFound';
 import Auth from './Auth';
@@ -25,7 +24,7 @@ const textColor = theme('mode', {
 
 const backgroundColor = theme('mode', {
   [Mode.light]: colors.white,
-  [Mode.dark]: colors.grayDark,
+  [Mode.dark]: colors.grayDarker,
 })
 
 const GlobalStyle = createGlobalStyle`
@@ -35,7 +34,6 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-// interface Props {}
 interface Props {
   themeInfo?: {
     mode: Mode
@@ -43,16 +41,11 @@ interface Props {
   }
 }
 
-// class App extends React.PureComponent<Props, {}> {
 const App: React.SFC<Props> = (props) => {
-  console.log('App props: ', props)
-  console.log('(props.themeInfo && props.themeInfo.size) || Size.normal: ', (props.themeInfo && props.themeInfo.size) || Size.normal)
   return (
     <ThemeProvider theme={{
       mode: (props.themeInfo && props.themeInfo.mode) || Mode.light,
       size: (props.themeInfo && props.themeInfo.size) || Size.normal,
-      // size: Size.large,
-      // size: Size.compact,
     }}>
       <React.Fragment>
         <GlobalStyle />
@@ -76,7 +69,6 @@ const App: React.SFC<Props> = (props) => {
   )
 }
 
-// export default App
 const mapStateToProps = (state: any) => {
   return state
 }

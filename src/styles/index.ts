@@ -46,6 +46,36 @@ export const textSizes = {
     [Size.normal]: '1.6em',
     [Size.compact]: '1.4em',
   },
+  t1: {
+    [Size.large]: '2.0em',
+    [Size.normal]: '1.8em',
+    [Size.compact]: '1.6em',
+  },
+  t2: {
+    [Size.large]: '1.8em',
+    [Size.normal]: '1.6em',
+    [Size.compact]: '1.4em',
+  },
+  t3: {
+    [Size.large]: '1.6em',
+    [Size.normal]: '1.4em',
+    [Size.compact]: '1.2em',
+  },
+  t4: {
+    [Size.large]: '1.4em',
+    [Size.normal]: '1.2em',
+    [Size.compact]: '1.0em',
+  },
+  t5: {
+    [Size.large]: '1.2em',
+    [Size.normal]: '1.0em',
+    [Size.compact]: '0.8em',
+  },
+  t6: {
+    [Size.large]: '1.0em',
+    [Size.normal]: '0.8em',
+    [Size.compact]: '0.6em',
+  },
   footer: {
     [Size.large]: '1em',
     [Size.normal]: '.8em',
