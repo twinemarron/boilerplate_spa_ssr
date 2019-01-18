@@ -13,8 +13,6 @@ ReactDOM.hydrate(
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </Provider>
-  ,
+  </Provider>,
   document.getElementById('app')
 )
-
