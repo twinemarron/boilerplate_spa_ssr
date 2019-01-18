@@ -25,7 +25,7 @@ interface Props {
   text: String
 }
 
-const HeaderTitle: React.SFC<any> = (props: Props) => {
+const HeaderTitle: React.SFC<Props> = (props) => {
   return (
     <Title>{props.text}</Title>
   )

@@ -2,19 +2,22 @@ import * as React from 'react'
 import { Mode, Size } from '../../../enums'
 
 interface Props {
-  changeMode(event: any): void
-  changeSize(event: any): void
+  changeMode(event: React.FormEvent): void
+  changeSize(event: React.FormEvent<HTMLSelectElement>): void
+}
+interface State {
+  size: Size
 }
 
-class ThemeSelectBox extends React.PureComponent<any, { size: Size }> {
+class ThemeSelectBox extends React.PureComponent<Props, State> {
   constructor(props: Props) {
     super(props)
     this.state = {
       size: Size.normal,
     }
   }
-  handleChangeSize = (event: any) => {
-    this.setState({size: event.target.value})
+  handleChangeSize = (event: React.FormEvent<HTMLSelectElement>) => {
+    this.setState({size: parseInt(event.currentTarget.value, 10)})
     this.props.changeSize(event)
   }
   render () {

@@ -6,8 +6,8 @@ import SignOutButton from '../../atoms/SignOutButton'
 import ThemeSelectBox from '../../atoms/ThemeSelectBox'
 
 interface Props {
-  changeMode(event: any): void 
-  changeSize(event: any): void 
+  changeMode(event: React.FormEvent): void
+  changeSize(event: React.FormEvent<HTMLSelectElement>): void
 }
 
 const Wrapper = styled.div`
@@ -19,13 +19,10 @@ const currentUser = {
   isLoggedIn: false,
 }
 
-const HeaderMenu: React.SFC<any> = (props: Props) => {
+const HeaderMenu: React.SFC<Props> = (props: Props) => {
   return (
     <Wrapper>
       <ThemeSelectBox
-        // handleChange={(event: any) => {
-        //     props.handleChange(event)
-        // }}
         changeMode={props.changeMode}
         changeSize={props.changeSize}
       />

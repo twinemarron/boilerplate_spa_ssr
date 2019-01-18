@@ -1,10 +1,15 @@
 import { combineReducers, Action } from 'redux'
 // import { Action } from 'redux'
-import { counterReducer } from './counterReducer'
-import { themeInfoReducer } from './themeInfoReducer'
+import { counterReducer, CounterState } from './counterReducer'
+import { themeInfoReducer, ThemeInfoState } from './themeInfoReducer'
+
+export interface State {
+  counter: CounterState
+  themeInfo: ThemeInfoState
+}
 
 const reducer = combineReducers({
-  // counter: counterReducer,
+  counter: counterReducer,
   themeInfo: themeInfoReducer,
 })
 

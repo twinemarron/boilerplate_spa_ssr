@@ -25,11 +25,16 @@ const Footer = styled.footer`
   height: ${footerHeight}px;
 `
 
-const PageTemplate: React.SFC<any> = ({
-  header, children, footer, ...props
+interface Props {
+  header: JSX.Element
+  children: JSX.Element
+  footer: JSX.Element
+}
+const PageTemplate: React.SFC<Props> = ({
+  header, children, footer
 }) => {
   return (
-    <Wrapper {...props}>
+    <Wrapper>
       <Header>{header}</Header>
       <Content>{children}</Content>
       <Footer>{footer}</Footer>

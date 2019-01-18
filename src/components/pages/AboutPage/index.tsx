@@ -4,7 +4,7 @@ import Header from '../../organisms/Header'
 import Footer from '../../organisms/Footer'
 import { WidthWrapper } from '../../atoms/Wrappers'
 
-const AboutPage: React.SFC<any> = (props) => {
+const AboutPage: React.SFC = (props) => {
   return (
     <PageTemplate
       header={<Header />}

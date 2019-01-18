@@ -26,10 +26,10 @@ const Text = styled.span`
   font-size: ${fontSize};
 `
 
-const SignOutButton: React.SFC<any> = (props) => {
+const SignOutButton: React.SFC = () => {
   return (
     <Wrapper>
-      <Link {...props}>
+      <Link>
         <Text>Sign out</Text>
       </Link>
     </Wrapper>

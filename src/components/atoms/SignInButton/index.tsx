@@ -35,10 +35,10 @@ const Text = styled.span`
   font-size: ${fontSize};
 `
 
-const SignInButton: React.SFC<any> = (props) => {
+const SignInButton: React.SFC = () => {
   return (
     <Wrapper>
-      <Link {...props}>
+      <Link>
         <Text>Sign in</Text>
       </Link>
     </Wrapper>

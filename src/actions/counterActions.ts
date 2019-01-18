@@ -1,13 +1,12 @@
 import { Action } from 'redux'
 import { ActionType } from './ActionType'
+import { CounterState } from '../reducers/counterReducer'
 
 interface IncrementCounterAction extends Action {
   type: ActionType.INCREMENT_COUNTER
-  payload: {
-    count: number
-  }
+  payload: CounterState
 }
-export const incrementCounterAction = (count: number): IncrementCounterAction => {
+export const incrementCounterAction = (count: CounterState['count']): IncrementCounterAction => {
   return {
     type: ActionType.INCREMENT_COUNTER,
     payload: {
@@ -18,12 +17,10 @@ export const incrementCounterAction = (count: number): IncrementCounterAction =>
 
 interface DecrementCounterAction extends Action {
   type: ActionType.DECREMENT_COUNTER
-  payload: {
-    count: number
-  }
+  payload: CounterState
 }
 
-export const decrementCounterAction = (count: number): DecrementCounterAction => {
+export const decrementCounterAction = (count: CounterState['count']): DecrementCounterAction => {
   return {
     type: ActionType.DECREMENT_COUNTER,
     payload: {

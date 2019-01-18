@@ -5,9 +5,8 @@ import Header from '../../organisms/Header'
 import { WidthWrapper, Section } from '../../atoms/Wrappers'
 import Footer from '../../organisms/Footer'
 
-interface Props {}
 
-const SignInPage: React.SFC<any> = (props: Props) => {
+const SignInPage: React.SFC = () => {
   return (
     <PageTemplate
       header={<Header />}

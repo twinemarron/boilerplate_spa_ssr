@@ -3,7 +3,7 @@ import PageTemplate from '../../templates/PageTemplate'
 import Header from '../../organisms/Header'
 import Footer from '../../organisms/Footer'
 
-const HomePage: React.SFC<any> = (props) => {
+const HomePage: React.SFC = (props) => {
   return (
     <PageTemplate
       header={<Header />}

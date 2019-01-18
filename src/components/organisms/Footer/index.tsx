@@ -19,9 +19,9 @@ const FooterEl = styled.footer`
   font-size: ${footerTextSize};
 `
 
-const Footer: React.SFC<any> = (props) => {
+const Footer: React.SFC = (props) => {
   return (
-    <Wrapper {...props}>
+    <Wrapper>
       <FooterEl>Copyright (C) 2019 Twine. All Rights Reserved.</FooterEl>
     </Wrapper>
   )

@@ -1,5 +1,7 @@
 import * as React from 'react'
 import { connect, MapDispatchToPropsParam, MapStateToPropsParam } from 'react-redux'
+import { Dispatch } from 'redux'
+import { State } from '../../../reducers'
 import styled from 'styled-components'
 import SignUpButton from '../../atoms/SignUpButton'
 import HeaderMenu from '../../molecules/HeaderMenu'
@@ -15,10 +17,11 @@ import {
   changeThemeModeAction,
   changeThemeSizeAction
 } from '../../../actions/ThemeInfoActions'
+import { putData, getData } from '../../../storage'
 
-interface Props {
-  changeThemeMode(event: any): void 
-  changeThemeSize(event: any): void 
+export interface Props {
+  changeThemeMode(mode: Mode): void 
+  changeThemeSize(size: Size): void 
 }
 const headerHeight = 65
 
@@ -50,18 +53,19 @@ const Title = styled.h1`
   font-weight: bold;
 `
 
-const Header: React.SFC<any> = (props: Props) => {
+const Header: React.SFC<Props> = (props: Props) => {
+  console.log('props: ', props)
   return (
     <Wrapper {...props}>
       <WidthWrapper>
         <InnerWrapper>
           <HeaderTitle text="Twine"/>
           <HeaderMenu
-            changeMode={(event: any) => {
-              props.changeThemeMode(event.target.value)
+            changeMode={(event: React.FormEvent<HTMLSelectElement>) => {
+              props.changeThemeMode(parseInt(event.currentTarget.value))
             }}
-            changeSize={(event: any) => {
-              props.changeThemeSize(event.target.value)
+            changeSize={(event: React.FormEvent<HTMLSelectElement>) => {
+              props.changeThemeSize(parseInt(event.currentTarget.value))
             }}
           />
         </InnerWrapper>
@@ -70,10 +74,10 @@ const Header: React.SFC<any> = (props: Props) => {
   )
 }
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: State) => {
   return state
 }
-const mapDispatchToProps = (dispatch: any) => {
+const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
     changeThemeMode: (mode: Mode) => {
       dispatch(changeThemeModeAction(mode))
