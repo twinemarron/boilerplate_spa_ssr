@@ -1,17 +1,12 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "lib": [
-      "es2018",
-      "dom"
-    ],
+    "lib": ["es2018", "dom"],
     "jsx": "react",
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "types": ["webpack-env"]
   },
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

@@ -27,4 +27,3 @@ const serverConfig = {
 const mergedConfig = { ...baseConfig, ...serverConfig }
 
 module.exports = mergedConfig
-

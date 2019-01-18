@@ -24,4 +24,3 @@ const clientConfig = {
 const mergedConfig = { ...baseConfig, ...clientConfig }
 
 module.exports = mergedConfig
-
