@@ -59,7 +59,7 @@ class App extends React.Component<Props> {
     // console.log('this.props.themeInfo: ', this.props.themeInfo)
     if (this.props.themeInfo)
       console.log('this.props.themeInfo.size: ', this.props.themeInfo.size)
-    getData('appSetting')
+    getData()
       .then(result => {
         // putData({
         //   appSetting: 'appSetting',

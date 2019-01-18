@@ -55,7 +55,7 @@ export const putData = (data: AppSetting): void => {
 }
 
 // export const getData = (key: string): Promise<IDBRequest> => {
-export const getData = (key: string): Promise<AppSetting> => {
+export const getData = (): Promise<AppSetting> => {
   let db, objectStore
   const openDBRequest = getOpenDBRequest()
   return new Promise((resolve, reject) => {
@@ -69,7 +69,7 @@ export const getData = (key: string): Promise<AppSetting> => {
       const db = (event.target as IDBOpenDBRequest).result
       const transaction = db.transaction([STORE_NAME], 'readonly')
       const objectStore = transaction.objectStore(STORE_NAME)
-      const request = objectStore.get(key)
+      const request = objectStore.get(KEY_PATH)
       request.onsuccess = event => {
         console.log('データの取得に成功 event: ', event)
         console.log('データの取得に成功 request: ', request)

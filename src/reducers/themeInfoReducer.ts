@@ -32,22 +32,29 @@ const initialState: ThemeInfoState = {
 //   }).catch(err => console.log('err: ', err))
 // }
 const getInitialState = () => {
-  getData('appSetting').then((result) => {
-    console.log('result: ', result)
-  return result
-  }).catch(err => console.log('err: ', err))
+  getData()
+    .then(result => {
+      console.log('result: ', result)
+      return result
+    })
+    .catch(err => console.log('err: ', err))
 }
 
-export const themeInfoReducer = (state: ThemeInfoState = initialState, action: ThemeInfoActions) => {
-  switch(action.type) {
+export const themeInfoReducer = (
+  state: ThemeInfoState = initialState,
+  action: ThemeInfoActions
+) => {
+  switch (action.type) {
     case ActionType.CHANGE_THEME_MODE:
       console.log('CHANGE_THEME_MODE action: ', action)
-      getData('appSetting').then((result) => {
-        console.log('CHANGE_THEME_MODE result: ', result)
-        return result
-      }).catch(err => {
-        console.log('CHANGE_THEME_MODE err: ', err)
-      })
+      getData()
+        .then(result => {
+          console.log('CHANGE_THEME_MODE result: ', result)
+          return result
+        })
+        .catch(err => {
+          console.log('CHANGE_THEME_MODE err: ', err)
+        })
       return {
         ...state,
         ...action.payload,
@@ -61,4 +68,3 @@ export const themeInfoReducer = (state: ThemeInfoState = initialState, action: T
       return state
   }
 }
-
