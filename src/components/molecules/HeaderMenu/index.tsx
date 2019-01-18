@@ -26,9 +26,7 @@ const HeaderMenu: React.SFC<Props> = (props: Props) => {
         changeMode={props.changeMode}
         changeSize={props.changeSize}
       />
-      {
-        currentUser.isLoggedIn ? <SignOutButton /> : <SignInButton /> 
-      }
+      {currentUser.isLoggedIn ? <SignOutButton /> : <SignInButton />}
       <SignUpButton />
     </Wrapper>
   )

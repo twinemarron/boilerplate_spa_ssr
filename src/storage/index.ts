@@ -54,7 +54,6 @@ export const putData = (data: AppSetting): void => {
   }
 }
 
-// export const getData = (key: string): Promise<IDBRequest> => {
 export const getData = (): Promise<AppSetting> => {
   let db, objectStore
   const openDBRequest = getOpenDBRequest()

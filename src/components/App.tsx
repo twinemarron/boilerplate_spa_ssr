@@ -55,17 +55,8 @@ interface Props {
 }
 class App extends React.Component<Props> {
   componentDidMount() {
-    // console.log('this.props: ', this.props)
-    // console.log('this.props.themeInfo: ', this.props.themeInfo)
-    if (this.props.themeInfo)
-      console.log('this.props.themeInfo.size: ', this.props.themeInfo.size)
     getData()
       .then(result => {
-        // putData({
-        //   appSetting: 'appSetting',
-        //   mode: result.mode,
-        //   size: this.props.themeInfo.size,
-        // })
         if (this.props.themeInfo && this.props.themeInfo.mode !== result.mode) {
           this.props.changeThemeMode(result.mode)
         }
@@ -104,33 +95,6 @@ class App extends React.Component<Props> {
     )
   }
 }
-// const App: React.SFC<Props> = (props) => {
-//   return (
-//     <ThemeProvider theme={{
-//       mode: (props.themeInfo && props.themeInfo.mode) || Mode.light,
-//       size: (props.themeInfo && props.themeInfo.size) || Size.normal,
-//     }}>
-//       <React.Fragment>
-//         <GlobalStyle />
-//         <div>
-//           <Switch>
-//             <Route exact path="/" component={RootPage} />
-//             <Route exact path="/signIn" component={SignInPage} />
-//             <Route exact path="/home" component={HomePage} />
-//             <Route path="/counter" component={Counter} />
-//             <Auth currentUser={{isLoggedIn: true}}>
-//               <Switch>
-//                 <Route exact path="/about" component={AboutPage} />
-//                 <Route component={() => <div>default</div>} />
-//               </Switch>
-//             </Auth>
-//             <Route component={NotFound} />
-//           </Switch>
-//         </div>
-//       </React.Fragment>
-//     </ThemeProvider>
-//   )
-// }
 
 const mapStateToProps = (state: State) => {
   return state

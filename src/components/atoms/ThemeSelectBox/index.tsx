@@ -1,4 +1,4 @@
-import * as React from 'react' 
+import * as React from 'react'
 import { Mode, Size } from '../../../enums'
 
 interface Props {
@@ -17,33 +17,26 @@ class ThemeSelectBox extends React.PureComponent<Props, State> {
     }
   }
   handleChangeSize = (event: React.FormEvent<HTMLSelectElement>) => {
-    this.setState({size: parseInt(event.currentTarget.value, 10)})
+    this.setState({ size: parseInt(event.currentTarget.value, 10) })
     this.props.changeSize(event)
   }
-  render () {
+  render() {
     return (
       <div>
         <p>
           Mode
           <select
-            onChange={(event) => {
+            onChange={event => {
               this.props.changeMode(event)
             }}
           >
-            <option value={Mode.light}>
-              light
-            </option>
-            <option value={Mode.dark}>
-              dark
-            </option>
+            <option value={Mode.light}>light</option>
+            <option value={Mode.dark}>dark</option>
           </select>
         </p>
         <p>
           Size
-          <select
-            onChange={this.handleChangeSize}
-            value={this.state.size}
-          >
+          <select onChange={this.handleChangeSize} value={this.state.size}>
             <option value={Size.large}>large</option>
             <option value={Size.normal}>normal</option>
             <option value={Size.compact}>compact</option>
