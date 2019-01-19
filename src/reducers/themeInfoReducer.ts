@@ -31,6 +31,7 @@ const initialState: ThemeInfoState = {
 //   return result
 //   }).catch(err => console.log('err: ', err))
 // }
+
 const getInitialState = () => {
   getData()
     .then(result => {

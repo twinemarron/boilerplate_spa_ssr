@@ -1,5 +1,9 @@
 import * as React from 'react'
-import { connect, MapDispatchToPropsParam, MapStateToPropsParam } from 'react-redux'
+import {
+  connect,
+  MapStateToPropsParam,
+  MapDispatchToPropsParam,
+} from 'react-redux'
 import { Dispatch } from 'redux'
 import { State } from '../../../reducers'
 import styled from 'styled-components'
@@ -9,19 +13,18 @@ import HeaderTitle from '../../atoms/HeaderTitle'
 import { WidthWrapper } from '../../atoms/Wrappers'
 import * as theme from 'styled-theming'
 import { colors, textSizes } from '../../../styles'
-import {
-  Size,
-  Mode
-} from '../../../enums'
+import { Size, Mode } from '../../../enums'
 import {
   changeThemeModeAction,
-  changeThemeSizeAction
+  changeThemeSizeAction,
 } from '../../../actions/ThemeInfoActions'
 import { putData, getData } from '../../../storage'
+import { ThemeInfoState } from '../../../reducers/themeInfoReducer'
 
 export interface Props {
-  changeThemeMode(mode: Mode): void 
-  changeThemeSize(size: Size): void 
+  themeInfo: ThemeInfoState
+  changeThemeMode(mode: Mode): void
+  changeThemeSize(size: Size): void
 }
 const headerHeight = 65
 
@@ -54,12 +57,12 @@ const Title = styled.h1`
 `
 
 const Header: React.SFC<Props> = (props: Props) => {
-  console.log('props: ', props)
+  console.log('Header props: ', props)
   return (
     <Wrapper {...props}>
       <WidthWrapper>
         <InnerWrapper>
-          <HeaderTitle text="Twine"/>
+          <HeaderTitle text="Twine" />
           <HeaderMenu
             changeMode={(event: React.FormEvent<HTMLSelectElement>) => {
               props.changeThemeMode(parseInt(event.currentTarget.value))
@@ -67,6 +70,7 @@ const Header: React.SFC<Props> = (props: Props) => {
             changeSize={(event: React.FormEvent<HTMLSelectElement>) => {
               props.changeThemeSize(parseInt(event.currentTarget.value))
             }}
+            themeInfo={props.themeInfo}
           />
         </InnerWrapper>
       </WidthWrapper>
@@ -75,7 +79,11 @@ const Header: React.SFC<Props> = (props: Props) => {
 }
 
 const mapStateToProps = (state: State) => {
+  console.log('Header mapStateToProps state: ', state)
   return state
+  // return {
+  //   themeInfo: state.themeInfo,
+  // }
 }
 const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
@@ -84,7 +92,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
     },
     changeThemeSize: (size: Size) => {
       dispatch(changeThemeSizeAction(size))
-    }
+    },
   }
 }
 
@@ -92,4 +100,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Header)
-

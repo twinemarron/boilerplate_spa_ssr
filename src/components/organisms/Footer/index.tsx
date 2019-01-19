@@ -5,9 +5,9 @@ import { Size } from '../../../enums'
 import { textSizes } from '../../../styles'
 
 const footerTextSize = theme('size', {
-  [Size.large]: textSizes.t6[Size.large],
-  [Size.normal]: textSizes.t6[Size.normal],
-  [Size.compact]: textSizes.t6[Size.compact],
+  [Size.large]: textSizes.footer[Size.large],
+  [Size.normal]: textSizes.footer[Size.normal],
+  [Size.compact]: textSizes.footer[Size.compact],
 })
 
 const Wrapper = styled.div`
@@ -19,7 +19,8 @@ const FooterEl = styled.footer`
   font-size: ${footerTextSize};
 `
 
-const Footer: React.SFC = (props) => {
+const Footer: React.SFC = props => {
+  console.log('Footer props: ', props)
   return (
     <Wrapper>
       <FooterEl>Copyright (C) 2019 Twine. All Rights Reserved.</FooterEl>

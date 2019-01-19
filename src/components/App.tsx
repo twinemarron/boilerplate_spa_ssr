@@ -27,6 +27,7 @@ import {
   changeThemeModeAction,
   changeThemeSizeAction,
 } from '../actions/ThemeInfoActions'
+import { ThemeInfoState } from '../reducers/themeInfoReducer'
 
 const textColor = theme('mode', {
   [Mode.light]: colors.text[Mode.light],
@@ -46,10 +47,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 interface Props {
-  themeInfo?: {
-    mode: Mode
-    size: Size
-  }
+  themeInfo?: ThemeInfoState
   changeThemeMode(mode: Mode): void
   changeThemeSize(size: Size): void
 }
@@ -64,13 +62,20 @@ class App extends React.Component<Props> {
       .catch(err => console.log('err: ', err))
   }
   render() {
+    if (this.props.themeInfo) {
+      console.log(this.props.themeInfo && this.props.themeInfo.size)
+    }
     return (
       <ThemeProvider
         theme={{
           mode:
-            (this.props.themeInfo && this.props.themeInfo.mode) || Mode.light,
+            this.props.themeInfo && this.props.themeInfo.mode
+              ? this.props.themeInfo.mode
+              : Mode.light,
           size:
-            (this.props.themeInfo && this.props.themeInfo.size) || Size.normal,
+            this.props.themeInfo && !isNaN(this.props.themeInfo.size)
+              ? this.props.themeInfo.size
+              : Size.normal,
         }}
       >
         <React.Fragment>
