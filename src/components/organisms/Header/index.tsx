@@ -57,7 +57,6 @@ const Title = styled.h1`
 `
 
 const Header: React.SFC<Props> = (props: Props) => {
-  console.log('Header props: ', props)
   return (
     <Wrapper {...props}>
       <WidthWrapper>
@@ -79,7 +78,6 @@ const Header: React.SFC<Props> = (props: Props) => {
 }
 
 const mapStateToProps = (state: State) => {
-  console.log('Header mapStateToProps state: ', state)
   return state
   // return {
   //   themeInfo: state.themeInfo,

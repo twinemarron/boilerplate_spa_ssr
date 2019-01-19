@@ -13,29 +13,9 @@ const initialState: ThemeInfoState = {
   size: Size.normal,
 }
 
-// const data = {
-//   appSetting: 'appSetting',
-//   mode: Mode.dark,
-//   size: Size.compact,
-// }
-
-// putData(data)
-// const p1 = getData('appSetting')
-// p1.then((result) => {
-//   console.log('result: ', result)
-// }).catch(err => console.log('err: ', err))
-
-// const getInitialState = () => {
-//   getData('appSetting').then((result) => {
-//     console.log('result: ', result)
-//   return result
-//   }).catch(err => console.log('err: ', err))
-// }
-
 const getInitialState = () => {
   getData()
     .then(result => {
-      console.log('result: ', result)
       return result
     })
     .catch(err => console.log('err: ', err))
@@ -46,25 +26,34 @@ export const themeInfoReducer = (
   action: ThemeInfoActions
 ) => {
   switch (action.type) {
-    case ActionType.CHANGE_THEME_MODE:
-      console.log('CHANGE_THEME_MODE action: ', action)
-      getData()
-        .then(result => {
-          console.log('CHANGE_THEME_MODE result: ', result)
-          return result
-        })
-        .catch(err => {
-          console.log('CHANGE_THEME_MODE err: ', err)
-        })
+    case ActionType.CHANGE_THEME_MODE: {
+      const data = {
+        appSetting: 'appSetting',
+        themeInfoState: {
+          mode: action.payload.mode,
+          size: state.size,
+        },
+      }
+      putData(data)
       return {
         ...state,
         ...action.payload,
       }
-    case ActionType.CHANGE_THEME_SIZE:
+    }
+    case ActionType.CHANGE_THEME_SIZE: {
+      const data = {
+        appSetting: 'appSetting',
+        themeInfoState: {
+          mode: state.mode,
+          size: action.payload.size,
+        },
+      }
+      putData(data)
       return {
         ...state,
         ...action.payload,
       }
+    }
     default:
       return state
   }

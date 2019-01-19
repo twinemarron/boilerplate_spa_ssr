@@ -55,16 +55,22 @@ class App extends React.Component<Props> {
   componentDidMount() {
     getData()
       .then(result => {
-        if (this.props.themeInfo && this.props.themeInfo.mode !== result.mode) {
-          this.props.changeThemeMode(result.mode)
+        if (
+          this.props.themeInfo &&
+          this.props.themeInfo.mode !== result.themeInfoState.mode
+        ) {
+          this.props.changeThemeMode(result.themeInfoState.mode)
+        }
+        if (
+          this.props.themeInfo &&
+          this.props.themeInfo.size !== result.themeInfoState.size
+        ) {
+          this.props.changeThemeSize(result.themeInfoState.size)
         }
       })
       .catch(err => console.log('err: ', err))
   }
   render() {
-    if (this.props.themeInfo) {
-      console.log(this.props.themeInfo && this.props.themeInfo.size)
-    }
     return (
       <ThemeProvider
         theme={{

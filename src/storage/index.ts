@@ -1,4 +1,5 @@
 import { Mode, Size } from '../enums'
+import { ThemeInfoState } from '../reducers/themeInfoReducer'
 
 const DB_NAME = 'twine_db'
 const STORE_NAME = 'themeInfo'
@@ -7,8 +8,7 @@ const VERSION = 1
 
 export type AppSetting = {
   appSetting: String
-  mode: Mode
-  size: Size
+  themeInfoState: ThemeInfoState
 }
 
 const getOpenDBRequest = (): IDBOpenDBRequest | null => {
@@ -28,29 +28,26 @@ export const putData = (data: AppSetting): void => {
   const openDBRequest = getOpenDBRequest()
   if (!openDBRequest) return
   openDBRequest.onsuccess = event => {
-    console.log('event!!!!')
-    console.log(event)
     if (!event || !event.target) return
-    console.log('onsuccess event: ', event)
     const db = (event.target as IDBOpenDBRequest).result
     const transaction = db.transaction(STORE_NAME, 'readwrite')
     const objectStore = transaction.objectStore(STORE_NAME)
     const request = objectStore.put(data)
     request.onsuccess = () => {
-      console.log('データの挿入に成功')
+      console.log('putData データの挿入に成功')
     }
     transaction.oncomplete = () => {
-      console.log('トランザクション完了')
+      console.log('putData トランザクション完了')
     }
   }
   openDBRequest.onupgradeneeded = (event): void => {
-    console.log('onupgradeneeded event: ', event)
+    console.log('putData onupgradeneeded event: ', event)
     if (!event || !event.target) return
     const db = (event.target as IDBOpenDBRequest).result
     const objectStore = db.createObjectStore(STORE_NAME, { keyPath: KEY_PATH })
   }
   openDBRequest.onerror = (event): void => {
-    console.log('onerror event: ', event)
+    console.log('putData onerror event: ', event)
   }
 }
 
@@ -64,22 +61,22 @@ export const getData = (): Promise<AppSetting> => {
     }
     openDBRequest.onsuccess = (event): void => {
       if (!event || !event.target) return
-      console.log('onsuccess event: ', event)
+      console.log('getData onsuccess event: ', event)
       const db = (event.target as IDBOpenDBRequest).result
       const transaction = db.transaction([STORE_NAME], 'readonly')
       const objectStore = transaction.objectStore(STORE_NAME)
       const request = objectStore.get(KEY_PATH)
       request.onsuccess = event => {
-        console.log('データの取得に成功 event: ', event)
-        console.log('データの取得に成功 request: ', request)
+        console.log('getData データの取得に成功 event: ', event)
+        console.log('getData データの取得に成功 request: ', request)
         resolve(request.result)
       }
       transaction.oncomplete = () => {
-        console.log('トランザクション完了')
+        console.log('getData transaction.oncomplete トランザクション完了')
       }
     }
     openDBRequest.onerror = event => {
-      console.log('onerror event: ', event)
+      console.log('getData onerror event: ', event)
       reject()
     }
   })

@@ -22,7 +22,6 @@ const currentUser = {
 }
 
 const HeaderMenu: React.SFC<Props> = (props: Props) => {
-  console.log('HeaderMenu props: ', props)
   return (
     <Wrapper>
       <ThemeSelectBox

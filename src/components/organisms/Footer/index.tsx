@@ -20,7 +20,6 @@ const FooterEl = styled.footer`
 `
 
 const Footer: React.SFC = props => {
-  console.log('Footer props: ', props)
   return (
     <Wrapper>
       <FooterEl>Copyright (C) 2019 Twine. All Rights Reserved.</FooterEl>

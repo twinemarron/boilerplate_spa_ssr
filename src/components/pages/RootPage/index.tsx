@@ -13,7 +13,6 @@ import {
 import { State } from '../../../reducers'
 
 const RootPage: React.SFC = props => {
-  console.log('RootPage props: ', props)
   return (
     <PageTemplate header={<Header />} footer={<Footer />}>
       <WidthWrapper>
@@ -26,20 +25,8 @@ const RootPage: React.SFC = props => {
   )
 }
 
-// export default RootPage
-
 const mapStateToProps = (state: State, b: any) => {
-  console.log('RootPage mapStateToProps state: ', state)
-  console.log('b: ', b)
   return state
 }
-const mapDispatchToProps = (dispatch: Dispatch, b: any) => {
-  console.log('dispatch: ', dispatch)
-  console.log('b: ', b)
-  // return dispatch
-}
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(RootPage)
+export default connect(mapStateToProps)(RootPage)

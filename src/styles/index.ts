@@ -72,16 +72,15 @@ function createTextSizes(obj: textBaseSizes): textSizes {
   var textSizes: textSizes = {}
   Object.keys(obj).forEach((val: string) => {
     textSizes[val] = {
-      [Size.large]: `${round(obj[val] + 0.2)}em`,
-      [Size.normal]: `${round(obj[val])}em`,
-      [Size.compact]: `${round(obj[val] - 0.2)}em`,
+      [Size.large]: `${round(obj[val] + 0.2)}rem`,
+      [Size.normal]: `${round(obj[val])}rem`,
+      [Size.compact]: `${round(obj[val] - 0.2)}rem`,
     }
   })
   return textSizes
 }
 
 export const textSizes = createTextSizes(textBaseSizes)
-console.log('textSizes: ', textSizes)
 // export const textSizes = {
 //   headerTitle: {
 //     [Size.large]: '1.8em',

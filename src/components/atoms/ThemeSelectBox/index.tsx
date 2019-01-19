@@ -44,7 +44,6 @@ class ThemeSelectBox extends React.PureComponent<Props, State> {
     this.props.changeSize(event)
   }
   render() {
-    console.log('ThemeSelectBox this.props.themeInfo: ', this.props.themeInfo)
     return (
       <div>
         <p>
