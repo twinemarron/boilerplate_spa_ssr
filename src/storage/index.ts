@@ -68,7 +68,6 @@ export const getData = (): Promise<AppSetting> => {
       const request = objectStore.get(KEY_PATH)
       request.onsuccess = event => {
         console.log('getData データの取得に成功 event: ', event)
-        console.log('getData データの取得に成功 request: ', request)
         resolve(request.result)
       }
       transaction.oncomplete = () => {
