@@ -6,7 +6,26 @@
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
-    "types": ["webpack-env"]
+    "types": ["webpack-env"],
+    "baseUrl": "./",
+    "paths": {
+      "components/*": ["src/components/*"],
+      "components": ["src/components"],
+      "containers/*": ["src/containers/*"],
+      "containers": ["src/containers"],
+      "actions/*": ["src/actions/*"],
+      "actions": ["src/actions"],
+      "enums/*": ["src/enums/*"],
+      "enums": ["src/enums"],
+      "reducers/*": ["src/reducers/*"],
+      "reducers": ["src/reducers"],
+      "routes/*": ["src/routes/*"],
+      "routes": ["src/routes"],
+      "styles/*": ["src/styles/*"],
+      "styles": ["src/styles"],
+      "storage/*": ["src/storage/*"],
+      "storage": ["src/storage"]
+    }
   },
   "exclude": ["node_modules"]
 }

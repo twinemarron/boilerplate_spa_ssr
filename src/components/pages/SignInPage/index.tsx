@@ -1,17 +1,12 @@
 import * as React from 'react'
-import PageTemplate from '../../templates/PageTemplate'
-import Header from '../../organisms/Header'
-// import { WidthWrapper } from '../../atoms/Wrappers'
-import { WidthWrapper, Section } from '../../atoms/Wrappers'
-import Footer from '../../organisms/Footer'
-
+import PageTemplate from 'components/templates/PageTemplate'
+import { Header } from 'containers/Header'
+import { WidthWrapper, Section } from 'components/atoms/Wrappers'
+import Footer from 'components/organisms/Footer'
 
 const SignInPage: React.SFC = () => {
   return (
-    <PageTemplate
-      header={<Header />}
-      footer={<Footer />}
-    >
+    <PageTemplate header={<Header />} footer={<Footer />}>
       <WidthWrapper>
         <Section>
           <div>SignInPageですね</div>
@@ -22,4 +17,3 @@ const SignInPage: React.SFC = () => {
 }
 
 export default SignInPage
-

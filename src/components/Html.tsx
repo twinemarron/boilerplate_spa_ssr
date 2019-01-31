@@ -1,8 +1,8 @@
 import * as React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 import * as theme from 'styled-theming'
-import App from '../components/App'
-import { Size, Mode } from '../enums'
+import App from 'components/App'
+import { Size, Mode } from 'enums'
 
 interface Props {}
 

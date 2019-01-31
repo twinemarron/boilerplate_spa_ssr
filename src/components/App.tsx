@@ -1,33 +1,30 @@
 import * as React from 'react'
 import { Route } from 'react-router-dom'
 import { Switch } from 'react-router'
-// import About from './About'
-// import Root from './Root'
-import RootPage from './pages/RootPage'
-import SignInPage from './pages/SignInPage'
-import HomePage from './pages/HomePage'
-import AboutPage from './pages/AboutPage'
-import Counter from '../components/Counter'
-import NotFound from './NotFound'
-import Auth from './Auth'
+import { RootPage } from 'containers/RootPage'
+import SignInPage from 'components/pages/SignInPage'
+import HomePage from 'components/pages/HomePage'
+import { AboutPage } from 'components/pages/AboutPage'
+import NotFound from 'components/NotFound'
+import Auth from 'components/Auth'
 import { withRouter, RouteComponentProps } from 'react-router-dom'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import * as theme from 'styled-theming'
-import { colors } from '../styles'
-import { Size, Mode } from '../enums'
+import { colors } from 'styles'
+import { Size, Mode } from 'enums'
 import {
   connect,
   MapDispatchToPropsParam,
   MapStateToPropsParam,
 } from 'react-redux'
-import { State } from '../reducers'
+import { State } from 'reducers'
 import { Dispatch } from 'redux'
-import { putData, getData } from '../storage'
+import { putData, getData } from 'storage'
 import {
   changeThemeModeAction,
   changeThemeSizeAction,
-} from '../actions/ThemeInfoActions'
-import { ThemeInfoState } from '../reducers/themeInfoReducer'
+} from 'actions/ThemeInfoActions'
+import { ThemeInfoState } from 'reducers/themeInfoReducer'
 
 const textColor = theme('mode', {
   [Mode.light]: colors.text[Mode.light],
@@ -91,7 +88,6 @@ class App extends React.Component<Props> {
               <Route exact path="/" component={RootPage} />
               <Route exact path="/signIn" component={SignInPage} />
               <Route exact path="/home" component={HomePage} />
-              <Route path="/counter" component={Counter} />
               <Auth currentUser={{ isLoggedIn: true }}>
                 <Switch>
                   <Route exact path="/about" component={AboutPage} />
