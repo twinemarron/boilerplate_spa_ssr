@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { SignUpButton } from 'components/atoms/SignUpButton'
-import HeaderMenu from 'components/molecules/HeaderMenu'
+import { HeaderMenu } from 'components/molecules/HeaderMenu'
 import { HeaderTitle } from 'components/atoms/HeaderTitle'
 import { WidthWrapper } from 'components/atoms/Wrappers'
 import * as theme from 'styled-theming'

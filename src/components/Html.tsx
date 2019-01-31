@@ -6,7 +6,7 @@ import { Size, Mode } from 'enums'
 
 interface Props {}
 
-const Html: React.SFC<Props> = (props: Props) => {
+export const Html: React.SFC<Props> = (props: Props) => {
   return (
     <html>
       <head>
@@ -28,5 +28,3 @@ const Html: React.SFC<Props> = (props: Props) => {
     </html>
   )
 }
-
-export default Html
