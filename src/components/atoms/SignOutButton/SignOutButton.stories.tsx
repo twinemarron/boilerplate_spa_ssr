@@ -1,0 +1,7 @@
+import * as React from 'react'
+import { storiesOf } from '@storybook/react'
+import { SignOutButton } from './SignOutButton'
+
+const stories = storiesOf('components/Header', module)
+
+stories.add('SignOutButton', () => <SignOutButton />)
