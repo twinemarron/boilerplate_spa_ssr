@@ -13,10 +13,18 @@ module.exports = (baseConfig, env, config) => {
     ],
   })
   config.resolve.extensions.push('.ts', '.tsx')
-  // config.resolve.alias = {
-  //   components: path.join(__dirname, '../src/components'),
-  //   enums: path.join(__dirname, '../src/enums'),
-  // }
-  // console.log('config:', config)
+  config.resolve.alias = {
+    ...config.resolve.alias,
+    ...{
+      components: path.join(__dirname, '../src/components'),
+      containers: path.join(__dirname, '../src/containers'),
+      actions: path.join(__dirname, '../src/actions'),
+      enums: path.join(__dirname, '../src/enums'),
+      reducers: path.join(__dirname, '../src/reducers'),
+      routes: path.join(__dirname, '../src/routes'),
+      styles: path.join(__dirname, '../src/styles'),
+      storage: path.join(__dirname, '../src/storage'),
+    },
+  }
   return config
 }

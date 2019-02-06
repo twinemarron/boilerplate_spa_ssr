@@ -21,7 +21,7 @@ const Title = styled.h1`
   font-size: ${headerTitleSize};
 `
 // color: ${textColor};
-interface Props {
+export interface Props {
   text: String
 }
 

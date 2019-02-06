@@ -4,7 +4,7 @@ import * as theme from 'styled-theming'
 import { Size, Mode } from 'enums'
 import { textSizes } from 'styles'
 
-interface Props {
+export interface Props {
   text: String
 }
 

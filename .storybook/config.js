@@ -5,6 +5,5 @@ function loadStories() {
   // require('../stories/index.js')
   requireContext.keys().forEach(filename => requireContext(filename))
 }
-// console.log('require.context: ', require.context)
 
 configure(loadStories, module)
