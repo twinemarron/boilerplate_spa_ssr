@@ -6,5 +6,5 @@ const props: Props = {
   text: 'Text in HeaderTitle.',
 }
 
-const stories = storiesOf('components/Header', module)
+const stories = storiesOf('components/Atoms', module)
 stories.add('HeaderTitle', () => <HeaderTitle text={props.text} />)
